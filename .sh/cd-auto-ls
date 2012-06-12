@@ -1,0 +1,17 @@
+#!/bin/sh
+cd() {
+    builtin cd "$@" || return
+    local lspp=~/.../src/ls--/ls++
+    if [ -x $lspp ]; then
+        if perl -MTerm::ExtendedColor -e 1 >/dev/null 2>&1; then
+            $lspp || true
+        else
+            [ -n "$WANT_ALL" ] &&
+                echo "Needs: cpanm Term::ExtendedColor"
+        fi
+    else
+        ls -l
+        [ -n "$WANT_ALL" ] &&
+            echo "Not executable: $lspp"
+    fi
+}
