@@ -6,12 +6,12 @@ cd() {
         if perl -MTerm::ExtendedColor -e 1 >/dev/null 2>&1; then
             $lspp || true
         else
+            ls -l
             [ -n "$WANT_ALL" ] &&
-                echo "Needs: cpanm Term::ExtendedColor"
+                echo "Needs: cpanm Term::ExtendedColor" || true
         fi
     else
         ls -l
-        [ -n "$WANT_ALL" ] &&
-            echo "Not executable: $lspp"
+        [ -n "$WANT_ALL" ] && echo "Not executable: $lspp" || true
     fi
 }
