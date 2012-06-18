@@ -1,0 +1,103 @@
+! This stuff is kind of dark darkness. I'll try to illuminate a step at a time.
+
+! Lines starting with "$" are shell commands followed by output.
+! [Also, you could explore by running each line as xmodmap -e '<the line>']
+
+! Here is my default output (on Gentoo Linux):
+! $ xmodmap
+! xmodmap:  up to 4 keys per modifier, (keycodes in parentheses):
+!
+! shift       Shift_L (0x32),  Shift_R (0x3e)
+! lock        Caps_Lock (0x42)
+! control     Control_L (0x25),  Control_R (0x69)
+! mod1        Alt_L (0x40),  Alt_R (0x6c),  Meta_L (0xcd)
+! mod2        Num_Lock (0x4d)
+! mod3
+! mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
+! mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
+
+! And:
+! $ xmodmap -pke | grep Multi_key || echo Nothing.
+! Nothing.
+
+! Now, to make Alt_R act as the Multi_key/"Compose"/AltGr (tap it then hit an
+! XCompose sequence to get extra chars, e.g.: Alt_R, ", o = ö
+! See: http://github.com/ryanjosephking/xcompose for a bunch of maps)
+
+! After this:
+keysym Alt_R = Multi_key
+
+! you get:
+! $ xmodmap
+! xmodmap:  up to 4 keys per modifier, (keycodes in parentheses):
+
+! shift       Shift_L (0x32),  Shift_R (0x3e)
+! lock        Caps_Lock (0x42)
+! control     Control_L (0x25),  Control_R (0x69)
+! mod1        Alt_L (0x40),  Multi_key (0x6c),  Meta_L (0xcd)
+! mod2        Num_Lock (0x4d)
+! mod3
+! mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
+! mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
+
+! And:
+! $ xmodmap -pke | grep Multi_key
+! keycode 108 = Multi_key NoSymbol Multi_key
+
+! --- Good. ---
+
+! Now, for making Caps_Lock do something other than ruin everything. We'll
+! make it mod3 so, e.g. you can tell your Window Manager to use it for stuff.
+! (I recommend this, because terminal-based programs can easily use Alt,
+! Control, and Shift modifiers, so using them for windowing is a bit of
+! theivery. Plus, the "Windows" key (which is Super_L to xmodmap by default)
+! is a bit hard to reach for something you do very frequently, and I very very
+! frequently switch workspaces, windows, etc. (even more so now that I'm on
+! xmonad).)
+
+! So, observe:
+
+! $ xmodmap | grep lock
+! lock        Caps_Lock (0x42)
+clear lock
+! $ xmodmap | grep lock
+! lock
+
+! Which is good, but code 0x42 still maps to Caps_Lock (run `xev` and tap Caps
+! Lock to demonstrate this).
+!
+! We could directly assign that to "mod3" and be sort of done, but it's not
+! very proper (as most X apps should use the symbolic names). So let's use
+! Hyper_L for our new modifier.
+!
+! But we can't assign 0x42 to Hyper_L just yet, because there is already this:
+! $ xmodmap | grep Hyper_L
+! mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
+
+! I have no idea where 0xcf is, on what keyboard, but I can't find it on mine.
+! So let's free up that key.
+
+! As `man xmodmap` says, "If you want to change the binding of a modifier key,
+! you must also remove it from the appropriate modifier map." [What happens
+! if you ignore this? And clear the existing Hyper_L keycode immediately? You
+! end up with a "BadKey (0xcf)".] So we disdisregard the advice:
+remove mod4 = Hyper_L
+! $ xmodmap | grep Hyper_L || echo Nothing.
+! Nothing.
+
+! Now clear the actual key:
+! $ xmodmap -pke | grep Hyper_L
+! keycode 207 = NoSymbol Hyper_L NoSymbol Hyper_L
+keycode 0xcf =
+! $ xmodmap -pke | grep Hyper_L || echo Nothing.
+! Nothing.
+
+! Then we can now make the Caps Lock button Hyper_L:
+keycode 0x42 = Hyper_L
+
+! Now, tapping `xev` will show Hyper_L instead of Caps_Lock. But the modifier
+! table doesn't know of Hyper_L, so programs like xmonad, which look for mod3
+! itself, won't catch it. Therefore, we do:
+add mod3 = Hyper_L
+
+! --- Yay. ---
