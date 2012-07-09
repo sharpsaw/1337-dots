@@ -13,12 +13,11 @@ myLayout = ThreeCol 1 (3/100) (1/2) ||| ThreeColMid 1 (3/100) (1/2)
     ||| noBorders (tabbed shrinkText defaultTheme)
     ||| Accordion
 
--- -- If xmodmap has, for example, mapped Caps_Lock to mod3, then use that:
--- myModMask = do retval <- system "xmodmap | grep '^mod3\\s*\\S*' >/dev/null"
---                if retval == ExitSuccess
---                  then mod3Mask
---                  else mod1Mask
-myModMask = mod3Mask
+-- If xmodmap has, for example, mapped Caps_Lock to mod3, then use that:
+myModMask = do retval <- system "xmodmap | grep '^mod3\\s*\\S*' >/dev/null"
+               if retval == ExitSuccess
+                 then return mod3Mask
+                 else return mod1Mask
 
 -- TODO: Also make this conditional (on there being a working urxvt.)
 myTerminal = "LANG=en_US.utf8 urxvt"
@@ -29,4 +28,5 @@ main = xmonad defaultConfig
             , terminal = myTerminal
             , normalBorderColor  = "black"
             , focusedBorderColor = "green"
+            , borderWidth = 1
             }
