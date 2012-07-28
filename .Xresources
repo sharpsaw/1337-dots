@@ -12,7 +12,7 @@ URxvt.perl-ext-common: default,selection-autotransform,matcher
 URxvt.selection-autotransform.0: s|^[ab]/||
 ! tmux sub-screens (due to a `tmux a` from a smaller terminal):
 URxvt.selection-autotransform.1: s|\s*│·*$||g
-! And for tmux's horizontal splits where the text is right by the bar:
+! And for tmux, when horizontal splits have the text right by the bar:
 URxvt.selection-autotransform.2: s|^│||g
 
 URxvt.matcher.button: 1
