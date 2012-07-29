@@ -6,11 +6,12 @@ Aggressive config stuff for the adventurous user.
 Context
 -------
 
-Based on [`...`](http://github.com/ingydotnet/....git) and works best under
-[`loop-dots`](http://github.com/sharpsaw/loop-dots)
+Why "-dots"?  See the system I start with:
 
-Contents
---------
+  curl sharpsaw.org/init | sh
+
+Content
+-------
 
 * `.tmux.conf` - Tmux is way better than `screen`, and this is a few tweaks to
   make it even better. You'll have to read the file itself to get the full
@@ -53,3 +54,10 @@ Contents
 * Ruby
   - `.irbrc` - Run `pry` instead of old `irb`
 * `README.md`: A self-referential file.
+
+Contact
+-------
+
+rking-1337-dots@sharpsaw.org
+
+Ask/tell/demand anything. I'll be receptive.
