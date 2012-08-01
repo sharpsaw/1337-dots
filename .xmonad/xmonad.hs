@@ -18,10 +18,7 @@ myManageHook = composeAll
     , className =? "Skype" --> doShift "4:skype"
     ]
 
-myLayout = ThreeCol 1 (3/100) (1/2) ||| ThreeColMid 1 (3/100) (1/2)
-    ||| Full
-    ||| noBorders (tabbed shrinkText defaultTheme)
-    ||| Accordion
+myLayout = ThreeCol 1 (3/100) (1/2) ||| Full
 
 -- If xmodmap has, for example, mapped Caps_Lock to mod3, then use that:
 -- myModMask = do retval <- system "xmodmap | grep '^mod3\\s*\\S*' >/dev/null"
