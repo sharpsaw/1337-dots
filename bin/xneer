@@ -1,0 +1,12 @@
+#!/bin/sh -xe
+## Record an X11 interaction into ~/.xnee/$1 for $2 seconds.
+name=$1; shift
+duration=${2:-5} # Not sure if I like this default of 5s.
+dir=~/.xnee
+[ -d $dir ] || mkdir $dir
+: Ready ;sleep .5
+: Set ;sleep .5
+: Go\! ;sleep .5
+cnee --record -o $dir/$name \
+    --seconds-to-record $duration \
+    --mouse --keyboard
