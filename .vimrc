@@ -3,6 +3,7 @@
 let s:want = [
       \'github:Raimondi/delimitMate',
       \'github:kien/ctrlp.vim',
-      \'github:Lokaltog/vim-powerline'
+      \'github:Lokaltog/vim-powerline',
+      \'github:scrooloose/nerdcommenter',
       \]
 call vam#ActivateAddons(s:want, {'auto_install' : 1})
