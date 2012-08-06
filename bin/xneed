@@ -1,0 +1,3 @@
+#!/bin/sh -xe
+## Replay the named X11 interaction, speedily!
+cnee --replay -f ~/.xnee/$1 --speed-percent 1
