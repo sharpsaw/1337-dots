@@ -5,5 +5,6 @@ let s:want = [
       \'github:kien/ctrlp.vim',
       \'github:Lokaltog/vim-powerline',
       \'github:scrooloose/nerdcommenter',
+      \'github:vim-scripts/Gundo',
       \]
 call vam#ActivateAddons(s:want, {'auto_install' : 1})
