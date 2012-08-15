@@ -1,0 +1,7 @@
+#!/bin/sh -xe
+## Redo the prefix key (good for nested sessions)
+: Untested.; exit 1
+: Must pass an arg, being the new key.
+expr $1 : '.$'
+tmux "set -g prefix C-$1; unbind C-$1; bind C-$1 last-window; bind $1 send-prefix"
+: TODO: figure out if unbinding the old one is desirable.

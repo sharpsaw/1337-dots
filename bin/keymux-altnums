@@ -1,0 +1,12 @@
+#!/bin/sh -xe
+## Makes Alt+1, Alt+2, etc. switch tmux windows.
+
+# Note that I skipped Alt+0, because it prevents me from doing <Esc>0 in vi-keys
+# This has caused me to down grade window 0 from a "primary home base" to a
+# second-class windowzen. It's OK though, the Alt+#s are a win for me.
+
+for n in `seq 1 9`; do
+    tmux bind -n M-$n select-window -t :$n
+done
+
+# TODO: base-index 1 somehow.

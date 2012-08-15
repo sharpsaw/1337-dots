@@ -1,0 +1,8 @@
+#!/bin/sh -xe
+## Alt+Tab to switch tmux panes. Of course, your WM will have to not capture this.
+
+# TODO: Make it more Alt-Tabby, so you can cycle further. For now it's OK.
+tmux bind -n M-C-i last-pane
+
+# Thansk to ccxCZ for pointing out the -n arg to "bind"!
+
