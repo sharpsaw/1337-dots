@@ -1,0 +1,9 @@
+#!/bin/sh -xe
+## Script bound to Alt+F5 in XMonad
+zsh -c xneed\ save-switch-reload 2>/dev/null
+# (A script I recorded after hitting F1 then mod-2 then F5)
+# (Expects having a vim bind F1 to :w<cr> and a web browser on workspace 2.)
+
+# Note that I'm using zsh -c instead of direct invocation because XMonad
+# doesn't have my $PATH right. I could potentially fix this in my init
+# scripts.

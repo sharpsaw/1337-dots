@@ -1,0 +1,6 @@
+#!/bin/sh -xe
+## Script bound to Alt+F9 in XMonad
+zsh -c xneed\ save-switch-cssreload
+# (A script I recorded after hitting F1 then mod-2 then F9, useful kk)
+# (Depends on the https://addons.mozilla.org/en-US/firefox/addon/css-reloader/
+# as well as having Firefox on workspace 2.)
