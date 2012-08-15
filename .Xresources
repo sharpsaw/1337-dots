@@ -8,12 +8,16 @@ URxvt*secondaryWheel: true
 
 ! legit stuff (thanks cirwin!)
 URxvt.perl-ext-common: default,selection-autotransform,matcher
+! Remove trailing space (especially good for Alt+Select (block select))
+URxvt.selection-autotransform.0: s|\\s*\\n|\\n|g
 ! git diffs
-URxvt.selection-autotransform.0: s|^[ab]/||
+URxvt.selection-autotransform.1: s|^[ab]/||
 ! tmux sub-screens (due to a `tmux a` from a smaller terminal):
-URxvt.selection-autotransform.1: s|\s*│·*$||g
+URxvt.selection-autotransform.2: s|\\s*│·*$||g
 ! And for tmux, when horizontal splits have the text right by the bar:
-URxvt.selection-autotransform.2: s|^│||g
+URxvt.selection-autotransform.3: s|^│||g
+! Remove the trailing \n. It is a pain.
+URxvt.selection-autotransform.4: s|\\n$||
 
 URxvt.matcher.button: 1
 URxvt.urlLauncher: firefox
