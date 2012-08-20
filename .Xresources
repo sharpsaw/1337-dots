@@ -17,7 +17,7 @@ URxvt.selection-autotransform.2: s|\\s*│·*$||g
 ! And for tmux, when horizontal splits have the text right by the bar:
 URxvt.selection-autotransform.3: s|^│||g
 ! Remove the trailing \n. It is a pain.
-URxvt.selection-autotransform.4: s|\\n$||
+URxvt.selection-autotransform.4: s|\\n\\Z||
 
 URxvt.matcher.button: 1
 URxvt.urlLauncher: firefox
