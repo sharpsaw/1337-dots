@@ -1,0 +1,6 @@
+#!/bin/sh -xe
+## Reverses keymux-altnums
+
+for n in `seq 1 9`; do
+    tmux unbind -n M-$n
+done
