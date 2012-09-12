@@ -1,0 +1,30 @@
+setopt \
+    autocd \
+    autolist \
+    autopushd \
+    autoresume \
+    correct \
+    completeinword \
+    extendedglob \
+    globdots \
+    extended_history \
+    incappend_history \
+    histignorespace \
+    histignoredups \
+    longlistjobs \
+    mailwarning \
+    noclobber \
+    noignoreeof \
+    nolistbeep \
+    notify \
+    pushdminus \
+    pushdsilent \
+    pushdtohome \
+    rcquotes \
+    equals \
+    interactivecomments \
+    nobadpattern \
+
+export HISTSIZE=100000 HISTFILE=~/.zsh_history SAVEHIST=100000
+eval $(dircolors)
+export ZLS_COLORS=$LS_COLORS

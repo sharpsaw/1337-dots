@@ -1,0 +1,44 @@
+
+# TODO - more from https://dev.0x50.de/projects/ftzsh/repository/revisions/master/entry/zshrc.d
+
+# Completion stuff...
+autoload -Uz compinit; compinit
+autoload -Uz colors; colors
+for i in computil complist; zmodload zsh/$i
+zmodload zsh/complist
+fpath=(~/.zsh/completion $fpath)
+# TODO: localhost:caphusozshrc
+fignore=(.o \~ .old .bak .tmp .swp CVS .svn)
+# zstyle :completion:<func>:<completer>:<cmd>:<arg>:<tag> _settings_
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*:descriptions' format "- %{${fg[yellow]}%}%d%{${reset_color}%} -"
+zstyle ':completion:*:messages'     format "- %{${fg[cyan]}%}%d%{${reset_color}%} -"
+zstyle ':completion:*:corrections'  format "- %{${fg[yellow]}%}%d%{${reset_color}%} - (%{${fg[cyan]}%}errors %e%{${reset_color}%})"
+zstyle ':completion:*:default' select-prompt "%{${fg[yellow]}%}Match %{${fg_bold[cyan]}%}%m%{${fg_no_bold[yellow]}%}  Line %{${fg_bold[cyan]}%}%l%{${fg_no_bold[red]}%}  %p%{${reset_color}%}"
+zstyle ':completion:*:default' list-prompt "%{${fg[yellow]}%}Line %{${fg_bold[cyan]}%}%l%{${fg_no_bold[yellow]}%}  Continue?%{${reset_color}%}"
+zstyle ':completion:*:warnings' format "- %{${fg_no_bold[red]}%}no match%{${reset_color}%} - %{${fg_no_bold[yellow]}%}%d%{${reset_color}%}"
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:manuals'       separate-sections true
+zstyle ':completion:*:manuals.(^1*)' insert-sections   true
+zstyle ':completion:*' menu select
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:-command-:*:' verbose no
+
+# This was pre-completing to "git-add" with "man git-<tab>".
+# Without it "man cront<tab>" doesn't fill in, because of the section
+# ambiguity. Not sure how to strike the perfect balance:
+#rjk# zstyle ':completion:*:*:(kill*|man):*' menu yes
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*:parameters' list-colors "=[^a-zA-Z]*=$color[red]"
+zstyle ':completion:*:aliases' list-colors "=*=$color[green]"
+zstyle ':completion:*:original' list-colors "=*=$color[red];$color[bold]" 
+zstyle ':completion:*:reserved-words' list-colors "=*=$color[red]"
+zstyle ':completion:*:*:*:*:hosts' list-colors "=*=$color[cyan];$color[bg-black]" 
+zstyle ':completion:*:*:*:*:users' list-colors "=*=$color[red];$color[bg-black]"
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#) #([^ ]#)*=$color[cyan]=$color[yellow]=$color[green]"
+
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
+                             /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin 
+# echo after .zshkeys: $PATH
