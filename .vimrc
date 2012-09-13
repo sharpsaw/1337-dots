@@ -9,6 +9,7 @@
 " ctrlp - Amazing fuzzy-finder starting with ^P. Check out :h CtrlP
 
 " powerline - Cool status bar spiffout.
+set laststatus=2 " and this is to make sure it shows up with only one window
 
 " nerdcommenter - Enable \cc (comment) and \cu (uncomment), in an Acmeist way.
 
