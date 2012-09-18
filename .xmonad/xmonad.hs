@@ -3,6 +3,9 @@
 
 import XMonad
 
+-- http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Actions-TopicSpace.html
+-- TODO: import XMonad.Actions.TopicSpace
+
 -- Note: These require xmonad-contrib
 import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig
