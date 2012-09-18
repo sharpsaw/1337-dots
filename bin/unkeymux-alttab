@@ -1,4 +1,0 @@
-#!/bin/sh -xe
-## Reverses keymux-alttab
-
-tmux unbind -n M-C-i

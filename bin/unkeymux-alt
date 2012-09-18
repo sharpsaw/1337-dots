@@ -1,2 +1,0 @@
-#!/bin/sh -xe
-unkeymux-altnums; unkeymux-alttab
