@@ -1,0 +1,6 @@
+#!/bin/sh -xe
+# Make a quick scratch space for code. Sort of a sibling to irby/pry
+SCR=~/src/scrap
+test -d $SCR || mkdir -p $SCR
+cd $SCR
+kiss foo.${1:-rb} +'map <f10> :!gist %<cr>'
