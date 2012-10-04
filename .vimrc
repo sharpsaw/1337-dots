@@ -14,6 +14,7 @@ set laststatus=2 " and this is to make sure it shows up with only one window
 " nerdcommenter - Enable \cc (comment) and \cu (uncomment), in an Acmeist way.
 
 " Gundo - Sweet navigator around the undo tree. Have +python then :GundoToggle
+"   Bound as <leader>gu (which, for me, is \gu and <space>gu)
 
 " surround - cs"', etc. ( http://www.vim.org/scripts/script.php?script_id=1697 )
 
