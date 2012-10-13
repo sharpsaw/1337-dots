@@ -27,6 +27,7 @@ let s:want = [
       \'github:Lokaltog/vim-powerline',
       \'github:scrooloose/nerdcommenter',
       \'github:vim-scripts/Gundo',
+      \'github:nathanaelkane/vim-indent-guides',
       \'surround',
       \]
 call vam#ActivateAddons(s:want, {'auto_install' : 1})
