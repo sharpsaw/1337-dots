@@ -1,10 +1,14 @@
 ! rxvt-unicode FTW ! ——————————————————————————————————————————
-URxvt*font: xft:Liberation Mono:pixelsize=10:antialias=true:hinting=true:xft:Code2000
-URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=10:antialias=true:hinting=true
-URxvt*italicFont: xft:Liberation Mono:italic:pixelsize=10:antialias=true:hinting=true
+
+! These fonts are in https://github.com/sharpsaw/unicode-dots
+URxvt*font: xft:Liberation Mono:pixelsize=10,\
+    xft:Code2000,\
+    xft:Code2001,\
+    xft:Code2002,\
+    xft:Quivira:antialias=true:hinting=true
+URxvt*letterSpace: -1
+
 URxvt*secondaryWheel: true
-!cirwins: URxvt*font: xft:Monospace-8,xft:VL\ Gothic,xft:Code2000
-!cirwins: !URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true
 
 ! legit stuff (thanks cirwin!)
 URxvt.perl-ext-common: default,selection-autotransform,matcher
@@ -22,12 +26,6 @@ URxvt.selection-autotransform.4: s|\\n\\Z||
 URxvt.matcher.button: 1
 URxvt.urlLauncher: firefox
 
-Xft.dpi: 96
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle: hintslight
-
 URxvt.depth: 32
 URxvt.geometry: 90x30
 URxvt.transparent: false
@@ -37,9 +35,6 @@ URxvt.loginShell: true
 URxvt.saveLines: 50
 URxvt.internalBorder: 3
 URxvt.lineSpace: 0
-
-! Fix font space !rjk: ?
-URxvt*letterSpace: -1
 
 ! Scrollbar
 URxvt.scrollStyle: rxvt
