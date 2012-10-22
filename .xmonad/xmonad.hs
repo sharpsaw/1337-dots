@@ -17,7 +17,6 @@ import System.Exit
 import System.Posix.Signals
 
 import XMonad.Prompt
-import XMonad.Prompt.Shell
 
 -- If xmodmap has, for example, mapped Caps_Lock to mod3, then use that:
 -- Needs another approach:
@@ -48,7 +47,6 @@ main = do
         `additionalKeys`
         [ ((mod1Mask, xK_F5 ), spawn "~/bin/Alt+F5")
         , ((mod1Mask, xK_F9 ), spawn "~/bin/Alt+F9")
-        , ((myModMask, xK_p), shellPrompt defaultXPConfig)
         ]
         `additionalKeysP`
         [ ("C-M-l", spawn "~/bin/,lock" ) -- from https://github.com/sharpsaw/x-dots/blob/master/bin/%2Clock
