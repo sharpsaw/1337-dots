@@ -1,0 +1,2 @@
+alias -g G='|& grep'
+alias -g L='|& less'
