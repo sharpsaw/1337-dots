@@ -8,6 +8,11 @@ URxvt*font: xft:Liberation Mono:pixelsize=10,\
     xft:Quivira:antialias=true:hinting=true
 URxvt*letterSpace: -1
 
+Xft.dpi: 86
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
 URxvt*secondaryWheel: true
 
 ! legit stuff (thanks cirwin!)
