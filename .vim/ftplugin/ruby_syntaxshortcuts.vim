@@ -1,6 +1,6 @@
 " These are in functions to prevent messing up your /-history. (:h search-undo)
 function! Ruby19Hashify()
-  s/:\(\S\+\)\s*=> /\1: /g
+  s/:\(\S\+\)\s*=>\s*/\1: /g
 endfunction
 map <Leader>9 :call Ruby19Hashify()<cr>
 
