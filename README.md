@@ -8,23 +8,11 @@ Context
 
 Why "-dots"?  See the system I start with:
 
-  curl sharpsaw.org/init | sh
+  zsh <(curl sharpsaw.org/init)
 
 Content
 -------
 
-* `.tmux.conf` - Tmux is way better than `screen`, and this is a few tweaks to
-  make it even better. You'll have to read the file itself to get the full
-  details, but:
-  - If you set the env var `$TMUXESC` before starting the tmux server, it will
-    allow you to override the default prefix key. This is especially important
-    if you do a lot of nested ssh'ing (I leave my localhost binding at `C-b`,
-    but then TMUXESC=a on my next level, and maybe TMUXESC=x if I've got a
-    third inside that.)
-  - If you set the env var `$WANT_TMUX_TO_HAVE_ALT_PLUS_NUM` , then tmux will
-    switch through windows with Alt-0, Alt-1, etc. This is my preference, but
-    if you use some app that binds it it'd be annoying, so I defaulted it to
-    off.
 * vim stuff:
   - `.vim/plugin/1337-keys.vim` - Changes formatoptions to favor comments
     less.
@@ -34,14 +22,18 @@ Content
      * `\'` to switch to single quotes (this and the next needs to be
        available more generally)
      * '\"' to switch to single quotes
-  - ctrlp-1337.vim - Pull in the *excellent*
-    [CtrlP.vim](http://kien.github.com/ctrlp.vim/)
   - coffee-1337.vim - Auto-write `.js` from `.cs`, if you have a file in the
     current dir named `.compile-coffeescript-automatically`
-  - delimitmate-addon.vim - Raimondi's awesome thing so you you don't have to
-    type matching delimiters.
-  - powerline. A more informative status bar. For super1337 mode try to get
+  - delimitmate-addon.vim - Automatically close [ ( ' etc.
+     * `<Tab>` hops over the closing delimiters
+     * `"<Tab><Backspace>` if you only want one `"` (`^V"` also does this)
+     * perl-dots just disables this addon for Perl.
+  - Powerline - A more informative status bar. For super1337 mode try to get
     the font patches going.
+  - NERDCommenter - Enable `<leader>cc` (comment) and `<leader>cu` (uncomment), in an Acmeist way.
+  - Gundo - Sweet navigator around the undo tree. Have +python then :GundoToggle
+     * Bound as <leader>gu (which, for me, is \gu and <space>gu)
+  - [surround](http://www.vim.org/scripts/script.php?script_id=1697) - cs"', etc.
 * zsh stuff:
   - Add zaw (supergood thing that's kind of like CtrlP. Bound to `^x;`)
   - Add zsh-syntax-highlighting, which is good because you get instant

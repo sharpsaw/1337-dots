@@ -9,7 +9,6 @@
 " ctrlp - Amazing fuzzy-finder starting with ^P. Check out :h CtrlP
 
 " powerline - Cool status bar spiffout.
-set laststatus=2 " and this is to make sure it shows up with only one window
 
 " nerdcommenter - Enable \cc (comment) and \cu (uncomment), in an Acmeist way.
 
@@ -17,14 +16,3 @@ set laststatus=2 " and this is to make sure it shows up with only one window
 "   Bound as <leader>gu (which, for me, is \gu and <space>gu)
 
 " surround - cs"', etc. ( http://www.vim.org/scripts/script.php?script_id=1697 )
-
-let s:want = [
-      \'github:Raimondi/delimitMate',
-      \'github:kien/ctrlp.vim',
-      \'github:Lokaltog/vim-powerline',
-      \'github:scrooloose/nerdcommenter',
-      \'github:vim-scripts/Gundo',
-      \'github:nathanaelkane/vim-indent-guides',
-      \'surround',
-      \]
-call vam#ActivateAddons(s:want, {'auto_install' : 1})
