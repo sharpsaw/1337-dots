@@ -1,5 +1,6 @@
-
-# TODO - more from https://dev.0x50.de/projects/ftzsh/repository/revisions/master/entry/zshrc.d
+# TODO
+#  - study https://code.google.com/p/config/source/browse/zsh/zsh.complete.zsh
+#  - more from https://dev.0x50.de/projects/ftzsh/repository/revisions/master/entry/zshrc.d
 
 # Completion stuff...
 autoload -Uz compinit; compinit
