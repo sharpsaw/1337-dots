@@ -37,7 +37,7 @@ func! s:MakeRakeAntOrRun()
   end
   make
 endfunc
-command MakeRakeAntOrRun :call s:MakeRakeAntOrRun()
+command! MakeRakeAntOrRun :call s:MakeRakeAntOrRun()
 
 func! s:RunThis()
   let l:full = expand('%:p')
@@ -52,4 +52,4 @@ func! s:RunThis()
     map \exe :!chmod +x %<cr>
   end
 endfunc
-command RunThis :call s:RunThis()
+command! RunThis :call s:RunThis()
