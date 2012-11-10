@@ -15,7 +15,7 @@ map \gf :sp <cword><CR>
 
 " These also are available as <F1> = \1, if you have
 " vim-dots/.vim/plugin/functionkeys.vim
-map <Leader>1 :up<cr>
+map <Leader>1 :w<cr>
 map <Leader>4 :wa<bar>:MakeRakeAntOrRun<cr>
 map <Leader>5 :wa<bar>:RunThis<cr>
 " Very versatile. Just do something manually, like :wa|!./% foo  then
