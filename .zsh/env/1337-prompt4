@@ -1,0 +1,6 @@
+# For scripts that use XDEBUG, by running: set -x
+# These can be overridden:
+XDEBUG_COLOR=${XDEBUG_COLOR:-90}
+XDEBUG_SIGIL=${XDEBUG_SIGIL:-:;} # Because it pastes back in as a command
+
+export PROMPT4="%{%F{$XDEBUG_COLOR}%}$XDEBUG_SIGIL%{%F{7}%} "
