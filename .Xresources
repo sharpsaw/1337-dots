@@ -1,5 +1,7 @@
 ! rxvt-unicode FTW ! ——————————————————————————————————————————
 
+URxvt*visualBell: true
+
 ! These fonts are in https://github.com/sharpsaw/unicode-dots
 URxvt*font: xft:Liberation Mono:pixelsize=10,\
     xft:Code2000,\
