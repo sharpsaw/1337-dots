@@ -24,10 +24,6 @@ Content
      * '\"' to switch to single quotes
   - coffee-1337.vim - Auto-write `.js` from `.cs`, if you have a file in the
     current dir named `.compile-coffeescript-automatically`
-  - delimitmate-addon.vim - Automatically close [ ( ' etc.
-     * `<Tab>` hops over the closing delimiters
-     * `"<Tab><Backspace>` if you only want one `"` (`^V"` also does this)
-     * perl-dots just disables this addon for Perl.
   - Powerline - A more informative status bar. For super1337 mode try to get
     the font patches going.
   - NERDCommenter - Enable `<leader>cc` (comment) and `<leader>cu` (uncomment), in an Acmeist way.
