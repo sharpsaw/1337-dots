@@ -11,7 +11,7 @@ map <Leader><Leader><Leader> :noh<CR>:set nopaste<CR>:set nolist<CR>
 
 map <Leader>p :set paste<CR>
 
-map \gf :sp <cword><CR>
+map <Leader>gf :sp <cword><CR>
 
 " These also are available as <F1> = \1, if you have
 " vim-dots/.vim/plugin/functionkeys.vim
@@ -19,7 +19,7 @@ map <Leader>1 :w<cr>
 map <Leader>4 :wa<bar>:MakeRakeAntOrRun<cr>
 map <Leader>5 :wa<bar>:RunThis<cr>
 " Very versatile. Just do something manually, like :wa|!./% foo  then
-" subsequent \]'s will repeat it (also available
+" subsequent \]'s will repeat it (also available as F8)
 map <Leader>] :wa<Bar><UP><CR>
 map <F8> <Leader>]
 
