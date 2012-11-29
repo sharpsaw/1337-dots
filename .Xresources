@@ -121,3 +121,12 @@ xterm*color14:LightSkyBlue
 xterm*color15:White
 xterm*colorBD:Orange
 xterm*colorUL:PaleGreen
+
+! Adding urxvt font-size changer:
+! https://github.com/majutsushi/urxvt-font-size
+URxvt.perl-ext-common: ...,font-size
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
