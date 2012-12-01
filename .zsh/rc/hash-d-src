@@ -1,5 +1,5 @@
 # Loop to create expanders, e.g. if you have ~/src/foo it makes:
 # ~foo
 # Can be used as an arg or standalone (as long as autocd is on).
-for n in ~/.../src/* ~/src/*(/N); do hash -d ${n##*/}=$n; done
+for n in ~/.../src/* ~/src/*(N); do hash -d ${n##*/}=$n; done
 # vim:ft=zsh
