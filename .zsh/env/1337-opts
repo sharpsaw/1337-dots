@@ -9,6 +9,7 @@ setopt \
     globdots \
     extended_history \
     incappend_history \
+    hashlistall \
     histignorespace \
     histignoredups \
     longlistjobs \
