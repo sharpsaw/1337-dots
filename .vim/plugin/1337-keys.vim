@@ -13,15 +13,13 @@ map <Leader>p :set paste<CR>
 
 map <Leader>gf :sp <cword><CR>
 
-" These also are available as <F1> = \1, if you have
-" vim-dots/.vim/plugin/functionkeys.vim
-map <Leader>1 :w<cr>
-map <Leader>4 :wa<bar>:MakeRakeAntOrRun<cr>
-map <Leader>5 :wa<bar>:RunThis<cr>
+map <F1> :w<cr>
+map <F4> :wa<bar>:MakeRakeAntOrRun<cr>
+map <F5> :wa<bar>:RunThis<cr>
 " Very versatile. Just do something manually, like :wa|!./% foo  then
-" subsequent \]'s will repeat it (also available as F8)
-map <Leader>] :wa<Bar><UP><CR>
-map <F8> <Leader>]
+" subsequent <F8>'s will repeat it (also available as <Leader>])
+map <F8> :wa<Bar><UP><CR>
+map <Leader>] <F8>
 
 func! s:MakeRakeAntOrRun()
   if filereadable('Rakefile')
