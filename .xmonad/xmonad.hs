@@ -11,6 +11,7 @@ import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig
 
 import qualified Data.Map as M
+import qualified XMonad.StackSet as W
 
 import System.Process
 import System.Exit
@@ -19,18 +20,28 @@ import System.Posix.Signals
 import XMonad.Prompt
 
 -- If xmodmap has, for example, mapped Caps_Lock to mod3, then use that:
--- Needs another approach:
--- http://hackage.haskell.org/packages/archive/X11/latest/doc/html/Graphics-X11-Xlib-Extras.html#v:getModifierMappi
 determineModMask = do
     r <- system "xmodmap | grep '^mod3\\s*\\S' >/dev/null"
     return (if r == ExitSuccess then mod3Mask else mod1Mask)
 
+keysToMoveWindowAndSwitchWorkspaces =
+        [ ("M-"++m++show k, f i)
+        | (i, k) <- zip myWorkspaces ([1 .. 9]++[0])
+        , (f, m) <-
+            [(windows . W.greedyView, ""),
+             (\i -> windows (W.shift i) >> windows (W.greedyView i), "S-")]
+        ]
+
+-- from https://github.com/sharpsaw/x-dots/blob/master/bin/%2Clock
+keyToLockScreen = [ ("C-M-l", spawn "~/bin/,lock" ) ]
+
+keysForAltFn =
+  [ ((mod1Mask, xK_F5 ), spawn "~/bin/Alt+F5")
+  , ((mod1Mask, xK_F9 ), spawn "~/bin/Alt+F9") ]
+
 main = do
     installHandler processStatusChanged Default Nothing
     myModMask <- determineModMask
-    print mod3Mask
-    print mod1Mask
-    print myModMask -- TODO: see what this picks when mod3's not selected
     xmonad $ defaultConfig
         { workspaces = myWorkspaces
         , layoutHook = myLayout
@@ -45,12 +56,9 @@ main = do
         -- and:
         -- http://hackage.haskell.org/packages/archive/X11/latest/doc/html/Graphics-X11-Types.html
         `additionalKeys`
-        [ ((mod1Mask, xK_F5 ), spawn "~/bin/Alt+F5")
-        , ((mod1Mask, xK_F9 ), spawn "~/bin/Alt+F9")
-        ]
+        keysForAltFn
         `additionalKeysP`
-        [ ("C-M-l", spawn "~/bin/,lock" ) -- from https://github.com/sharpsaw/x-dots/blob/master/bin/%2Clock
-        ]
+        (keyToLockScreen ++ keysToMoveWindowAndSwitchWorkspaces)
 
 myWorkspaces = [
     "1:dev","2:web","3:irc","4:skype","5:misc",
