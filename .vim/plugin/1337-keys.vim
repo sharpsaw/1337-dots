@@ -1,5 +1,4 @@
-" Who writes enough multiline comments that they need autocommenting?
-set formatoptions-=or
+set formatoptions-=orj
 " (Check :h fo-table )
 " (And note that for editing this file you won't see the effect. The
 " $VIMRUNTIME/ftplugin/vim.vim re-sets it with ft+=croql)
