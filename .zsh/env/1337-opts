@@ -27,5 +27,8 @@ setopt \
     nobadpattern \
 
 export HISTSIZE=100000 HISTFILE=~/.zsh_history SAVEHIST=100000
-eval $(dircolors)
-export ZLS_COLORS=$LS_COLORS
+if type dircolors &>/dev/null; then
+    eval $(dircolors)
+    export ZLS_COLORS=$LS_COLORS
+fi
+# vim:ft=zsh
