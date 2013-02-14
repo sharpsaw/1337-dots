@@ -322,6 +322,8 @@ gravity :gimp_dock,      [  90,   0,  10, 100 ]
 # Exec programs
 grab 'W-Return', '73rm1n4l'
 
+grab 'W-S-s', 'gksudo pm-suspend'
+
 # # Jump to view1, view2, ...
 # grab "W-S-1", :ViewJump1
 # grab "W-S-2", :ViewJump2
