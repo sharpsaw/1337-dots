@@ -1,0 +1,21 @@
+#!/bin/bash
+## Run the 1337est terminal available
+
+# Can be overridden with an explicit symlink:
+[ -e ~/.73rm1n4l ] && exec ~/73rm1n4l "$@"
+
+# TODO: One puzzle is how to make this work for OS X, e.g. favor iTerm2 over
+# Terminal.app
+
+# TODO: Actually answer this question, "What is the entire list of terminals,
+# sorted by leetness?"   Personally, urxvt is at the top, but I'm not sure how
+# the rest rank
+for t3rm in \
+    urxvt \
+    xterm \
+    Terminal \
+    gnome-terminal \
+    sensible-x-terminal \
+; do
+    type $n &>/dev/null && exec $t3rm "$@"
+done
