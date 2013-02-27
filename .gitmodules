@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter
 [submodule ".vim/bundle/Gundo"]
 	path = .vim/bundle/Gundo
 	url = git://github.com/vim-scripts/Gundo
