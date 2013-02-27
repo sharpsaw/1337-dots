@@ -20,6 +20,9 @@ map <F5> :wa<bar>:RunThis<cr>
 map <F8> :wa<Bar><UP><CR>
 map <Leader>] <F8>
 
+map <F11> :tabN<cr>
+map <F12> :tabn<cr>
+
 func! s:MakeRakeAntOrRun()
   if filereadable('Rakefile')
     setlocal makeprg=rake
