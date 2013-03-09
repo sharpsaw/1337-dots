@@ -1,1 +1,1 @@
-/home/rking/.../src/rking-dots/.zsh/rc/eazy
+ez() exec zsh
