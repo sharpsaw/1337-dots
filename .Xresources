@@ -56,32 +56,31 @@ URxvt.cursorUnderline: false
 URxvt.pointerBlank: true
 
 URxvt*foreground: #f2f2f2
-URxvt*background: #101010
 
 !black
-URxvt*color0:      #000000
-URxvt*color8:      #555753
+*color0:      #000000
+*color8:      #555753
 !red
-URxvt*color1:      #CC0000
-URxvt*color9:      #EF2929
+*color1:      #CC0000
+*color9:      #EF2929
 !green
-URxvt*color2:      #4E9A06
-URxvt*color10:     #8AE234
+*color2:      #4E9A06
+*color10:     #8AE234
 !yellow
-URxvt*color3:      #C4A000
-URxvt*color11:     #FCE94F
+*color3:      #C4A000
+*color11:     #FCE94F
 !blue
-URxvt*color4:      #3465A4
-URxvt*color12:     #729FCF
+*color4:      #3465A4
+*color12:     #729FCF
 !magenta
-URxvt*color5:      #75507B
-URxvt*color13:     #AD7FA8
+*color5:      #75507B
+*color13:     #AD7FA8
 !cyan
-URxvt*color6:      #06989A
-URxvt*color14:     #34E2E2
+*color6:      #06989A
+*color14:     #34E2E2
 !white
-URxvt*color7:      #D3D7CF
-URxvt*color15:     #ECEDEE
+*color7:      #D3D7CF
+*color15:     #ECEDEE
 
 ! xterm stuff —————————————————————————————————————————————————
 xterm*metaSendsEscape: true
@@ -98,26 +97,3 @@ xterm*Font3: -efont-fixed-medium-r-normal-*-14-*-*-*-*-*-iso10646-1
 xterm*Font4: -efont-fixed-medium-r-normal-*-16-*-*-*-*-*-iso10646-1
 xterm*Font5: -misc-fixed-medium-r-normal--18-*-*-*-*-*-iso10646-1
 xterm*Font6: -efont-fixed-medium-r-normal-*-24-*-*-*-*-*-iso10646-1
-
-#define RjkYellow #bbbb88
-#define RjkBlue #3333bf
-#define RjkGreen #19bf3a
-
-xterm*color0:Grey20
-xterm*color1:FireBrick
-xterm*color2:RjkGreen
-xterm*color3:RjkYellow
-xterm*color4:RjkBlue
-xterm*color5:Plum
-xterm*color6:LightSkyBlue
-xterm*color7:White
-xterm*color8:Grey50
-xterm*color9:Orange
-xterm*color10:RjkGreen
-xterm*color11:RjkYellow
-xterm*color12:RjkBlue
-xterm*color13:Plum
-xterm*color14:LightSkyBlue
-xterm*color15:White
-xterm*colorBD:Orange
-xterm*colorUL:PaleGreen
