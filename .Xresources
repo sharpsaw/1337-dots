@@ -1,5 +1,8 @@
 ! rxvt-unicode FTW ! ——————————————————————————————————————————
 
+URxvt*foreground: #f2f2f2
+URxvt*background: black
+
 URxvt*visualBell: true
 
 ! These fonts are in https://github.com/sharpsaw/unicode-dots
@@ -54,8 +57,6 @@ URxvt.cursorUnderline: false
 
 ! Pointer
 URxvt.pointerBlank: true
-
-URxvt*foreground: #f2f2f2
 
 !black
 *color0:      #000000
