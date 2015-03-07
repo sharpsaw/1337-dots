@@ -1,5 +1,5 @@
 #!/bin/sh
-cd() {
+c() {
     [[ -f $1 ]] && 1="$1:h" # if you 'cd some/file' it's like 'cd some/'
     builtin cd "$@" || return
     local lspp=~/.../src/ls--/ls++
